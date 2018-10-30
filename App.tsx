@@ -1,21 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Provider, connect } from 'react-redux';
+import HomeActivity from './src/HomeActivity';
 
-const styles: any = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { createStore } from 'redux';
 
+const INITIAL_STATE = {
+  btc: 0,
+  ltc: 0,
+  euro: 0,
+  eth: 0,
+  isAvailable: false,
+};
+
+const reducer = (state = INITIAL_STATE, action: any) => {
+  switch (action.type) {
+    case 'UPDATE_STATE':
+      return { ...state, ...action.state };
+  }
+};
+
+const store = createStore(reducer);
 export default class App extends React.Component<{}, {}> {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start work ing on your app!</Text>
-      </View>
+      <Provider store={store}>
+        <HomeActivity />
+      </Provider>
     );
   }
 }
