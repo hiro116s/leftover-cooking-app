@@ -1,11 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
-import Ingredient from '../model/Ingredient';
+import RecipeModel from '../model/RecipeModel';
 
 export interface RecipeProps {
-    imageURL: string;
-    name: string;
-    ingredients: Array<Ingredient>;
+  recipe: RecipeModel;
 }
 
 const styles: any = StyleSheet.create({
@@ -22,9 +20,9 @@ export class Recipe extends React.Component<RecipeProps, {}> {
   render() {
     return (
       <View style={styles.recipeImage}>
-        <Image style={{flex: 4}} source={{uri: this.props.imageURL}} />
-        <Text style={{flex: 1}}>{this.props.name}</Text>
-        <FlatList style={{flex: 1}} data={this.props.ingredients} keyExtractor={(item, index) => index.toString()} renderItem={(ingredient) => 
+        <Image style={{flex: 4}} source={{uri: this.props.recipe.$imageURL}} />
+        <Text style={{flex: 1}}>{this.props.recipe.$name}</Text>
+        <FlatList style={{flex: 1}} data={this.props.recipe.$ingredients} keyExtractor={(item, index) => index.toString()} renderItem={(ingredient) => 
           <Text>{ingredient.item.$title}:{ingredient.item.$amount}</Text>} 
         />
       </View>

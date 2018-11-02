@@ -1,4 +1,4 @@
-export default class Ingredient {
+export default class IngredientModel {
     private title: string;
     private amount: string;
 
