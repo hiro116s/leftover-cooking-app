@@ -2,22 +2,38 @@ import IngredientModel from './IngredientModel';
 import OwnerModel from './OwnerModel';
 import { RecipeSource } from './RecipeSource';
 
-export default class RecipeModel {
+class ImageUrl {
+    private T280x210: string;
+
+	constructor($T280x210: string) {
+		this.T280x210 = $T280x210;
+	}
+
+    /**
+     * Getter $T280x210
+     * @return {string}
+     */
+	public get $T280x210(): string {
+		return this.T280x210;
+	}
+} 
+
+export default class RecipeModel {    
     private internalId: number;
     private externalId: number;
     private owner: OwnerModel;
     private recipeSource: RecipeSource;
-    private imageURL: string;
+    private imageUrlBySizeType: Array<ImageUrl>;
     private name: string;
     private url: string;
     private ingredients: Array<IngredientModel>;
-
-	constructor($internalId: number, $externalId: number, $owner: OwnerModel, $recipeSource: RecipeSource, $imageURL: string, $name: string, $url: string, $ingredients: Array<IngredientModel>) {
+    
+	constructor($internalId: number, $externalId: number, $owner: OwnerModel, $recipeSource: RecipeSource, $imageUrlBySizeType: Array<ImageUrl>, $name: string, $url: string, $ingredients: Array<IngredientModel>) {
 		this.internalId = $internalId;
 		this.externalId = $externalId;
 		this.owner = $owner;
 		this.recipeSource = $recipeSource;
-		this.imageURL = $imageURL;
+		this.imageUrlBySizeType = $imageUrlBySizeType;
 		this.name = $name;
 		this.url = $url;
 		this.ingredients = $ingredients;
@@ -55,12 +71,13 @@ export default class RecipeModel {
 		return this.recipeSource;
 	}
 
+
     /**
-     * Getter $imageURL
-     * @return {string}
+     * Getter $imageUrlBySizeType
+     * @return {Array<ImageUrl>}
      */
-	public get $imageURL(): string {
-		return this.imageURL;
+	public get $imageUrlBySizeType(): Array<ImageUrl> {
+		return this.imageUrlBySizeType;
 	}
 
     /**
@@ -86,4 +103,5 @@ export default class RecipeModel {
 	public get $ingredients(): Array<IngredientModel> {
 		return this.ingredients;
 	}
+
 }
