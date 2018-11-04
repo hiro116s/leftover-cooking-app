@@ -6,9 +6,12 @@ import RecipeModel from './model/RecipeModel';
 import RecipeStack from './components/RecipeStack';
 import MenuBar from './components/MenuBar';
 
+import { RecipeSource } from './model/RecipeSource';
+import OwnerModel from './model/OwnerModel';
+
 export default class HomeActivity extends React.Component<{}, {}> {
-  recipe1: RecipeModel = new RecipeModel('焼き肉のタレだけ！スキレットでビビンバ風', 'https://img.cpcdn.com/recipes/2494374/280/4d700c6db375f474252a4efb1a9c5e23.jpg?u=2696078&p=1391848993', [ new IngredientModel("ゴボウ", "４００g"), new IngredientModel("ニンジン", "２５０g")]);
-  recipe2: RecipeModel = new RecipeModel('山芋無しで♡春キャベツのお好み焼き♡', 'https://img.cpcdn.com/recipes/3742964/280/447c228c95a633c72772d18227026a9e.jpg?u=10049643&p=1457769601',  [ new IngredientModel("キャベツ", "約７００㌘"), new IngredientModel("豚", "６〜７枚"), new IngredientModel("モヤシ", "１袋(２００㌘)"), new IngredientModel("卵", "６〜７個"), new IngredientModel("小麦粉", "１５０㌘"), new IngredientModel("ベーキングパウダー", "５㌘"), new IngredientModel("牛乳", "２００㏄"), new IngredientModel("カツオ", "小さじ１と１/２"), new IngredientModel("マヨネーズ", "各適量"), new IngredientModel("サラダ油", "適量") ]);
+  recipe1: RecipeModel = new RecipeModel(0, 0, new OwnerModel(0, 0, "a", ""), RecipeSource.COOK_PAD, 'https://img.cpcdn.com/recipes/2494374/280/4d700c6db375f474252a4efb1a9c5e23.jpg?u=2696078&p=1391848993', '焼き肉のタレだけ！スキレットでビビンバ風', "https://www.google.com", [ new IngredientModel("ゴボウ", "４００g"), new IngredientModel("ニンジン", "２５０g")]);
+  recipe2: RecipeModel = new RecipeModel(0, 0, new OwnerModel(0, 0, "a", ""), RecipeSource.COOK_PAD, 'https://img.cpcdn.com/recipes/3742964/280/447c228c95a633c72772d18227026a9e.jpg?u=10049643&p=1457769601',  '山芋無しで♡春キャベツのお好み焼き♡', "https://www.google.com", [ new IngredientModel("キャベツ", "約７００㌘"), new IngredientModel("豚", "６〜７枚"), new IngredientModel("モヤシ", "１袋(２００㌘)"), new IngredientModel("卵", "６〜７個"), new IngredientModel("小麦粉", "１５０㌘"), new IngredientModel("ベーキングパウダー", "５㌘"), new IngredientModel("牛乳", "２００㏄"), new IngredientModel("カツオ", "小さじ１と１/２"), new IngredientModel("マヨネーズ", "各適量"), new IngredientModel("サラダ油", "適量") ]);
 
   render() {
     return (

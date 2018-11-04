@@ -2,8 +2,8 @@ export default class IngredientModel {
     private title: string;
     private amount: string;
 
-	constructor(title: string, $amount: string) {
-		this.title = title;
+	constructor($title: string, $amount: string) {
+		this.title = $title;
 		this.amount = $amount;
 	}
 
@@ -22,4 +22,5 @@ export default class IngredientModel {
 	public get $amount(): string {
 		return this.amount;
 	}
+
 }
