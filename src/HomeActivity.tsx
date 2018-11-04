@@ -4,15 +4,10 @@ import { Recipe } from './components/Recipe';
 import RecipeStack from './components/RecipeStack';
 import MenuBar from './components/MenuBar';
 
-import { RecipeSource } from './model/RecipeSource';
-import OwnerModel from './model/OwnerModel';
-
 import RECIPE_DATA from './resources/recipes.json';
-import RecipeModel from './model/RecipeModel';
 
 export default class HomeActivity extends React.Component<{}, {}> {
   render() {
-    console.log(RECIPE_DATA[0].externalId, RECIPE_DATA[0].imageUrlBySizeType, RECIPE_DATA[0].ingredients, RECIPE_DATA[0].internalId, RECIPE_DATA[0].owner, RECIPE_DATA[0].recipeSource, RECIPE_DATA[0].title, RECIPE_DATA[0].url);
     return (
       <View style={{flex: 1, alignItems: 'stretch'}}>
         <View style={{flex: 5, flexDirection: 'row'}}>

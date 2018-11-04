@@ -18,13 +18,12 @@ const styles: any = StyleSheet.create({
 
 export class Recipe extends React.Component<RecipeProps, {}> {
   render() {
-    console.log(this.props.recipe.$externalId, this.props.recipe.$imageUrlBySizeType, this.props.recipe.$ingredients, this.props.recipe.$internalId, this.props.recipe.$name, this.props.recipe.$owner, this.props.recipe.$recipeSource, this.props.recipe.$url);
     return (
       <View style={styles.recipeImage}>
-        <Image style={{flex: 4}} source={{uri: this.props.recipe.$imageUrlBySizeType.$T280x210}} />
-        <Text style={{flex: 1}}>{this.props.recipe.$name}</Text>
-        <FlatList style={{flex: 1}} data={this.props.recipe.$ingredients} keyExtractor={(item, index) => index.toString()} renderItem={(ingredient) => 
-          <Text>{ingredient.item.$title}:{ingredient.item.$amount}</Text>} 
+        <Image style={{flex: 4}} source={{uri: this.props.recipe.imageUrlBySizeType.T280x210}} />
+        <Text style={{flex: 1}}>{this.props.recipe.title}</Text>
+        <FlatList style={{flex: 1}} data={this.props.recipe.ingredients} keyExtractor={(item, index) => index.toString()} renderItem={(ingredient) => 
+          <Text>{ingredient.item.title}:{ingredient.item.amount}</Text>}
         />
       </View>
     );

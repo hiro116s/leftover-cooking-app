@@ -21,7 +21,7 @@ export default class RecipeStack extends React.Component<RecipeStackProps, {}> {
         <ScrollView horizontal={true}>
             {this.props.recipes.map((prop, key) => {
                 return (
-                    <Image style={styles.recipeImage} key={key} source={{ uri: prop.$imageUrlBySizeType.$T280x210, width: 64, height: 64 }} />
+                    <Image style={styles.recipeImage} key={key} source={{ uri: prop.imageUrlBySizeType.T280x210, width: 64, height: 64 }} />
                 )
             })}
         </ScrollView>
