@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import MenuBar from '../components/MenuBar'
-import { MenuType, switchMenu } from '../actions';
+import { MenuType, switchMenu } from '../actions/SwitchMenuAction';
 import { MenuState } from '../reducers/MenuReducer';
 
 const mapStateToProps = (state: MenuState) => ({
