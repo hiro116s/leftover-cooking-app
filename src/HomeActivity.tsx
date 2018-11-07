@@ -5,6 +5,7 @@ import RecipeStack from './components/RecipeStack';
 import MenuBar from './components/MenuBar';
 
 import RECIPE_DATA from './resources/recipes.json';
+import MenuContainer from './containers/MenuContainer';
 
 export default class HomeActivity extends React.Component<{}, {}> {
   render() {
@@ -21,7 +22,7 @@ export default class HomeActivity extends React.Component<{}, {}> {
         <View>
           <RecipeStack recipes={[RECIPE_DATA[5], RECIPE_DATA[4], RECIPE_DATA[6]]} />
         </View>
-        <MenuBar />
+        <MenuContainer />
       </View>
     );
   }
