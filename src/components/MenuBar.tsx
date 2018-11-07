@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
-import { FOOD_IMAGE, FOOD_BLUE_IMAGE, REFRIGERATOR_IMAGE, REFRIGERATOR_BLUE_IMAGE, NOTE_IMAGE, NOTE_BLUE_IMAGE} from '../img';
+import { FOOD_IMAGE, FOOD_BLUE_IMAGE, REFRIGERATOR_IMAGE, REFRIGERATOR_BLUE_IMAGE, NOTE_IMAGE, NOTE_BLUE_IMAGE} from '../resources/img';
 
 interface MenuBarProps {
 
