@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import HomeActivity from './src/HomeActivity';
+import Home from './src/Home';
 
 import { createStore } from 'redux';
 import menuReducer from './src/reducers/MenuReducer';
@@ -10,7 +10,7 @@ export default class App extends React.Component<{}, {}> {
   render() {
     return (
       <Provider store={store}>
-        <HomeActivity />
+        <Home />
       </Provider> 
     );
   }

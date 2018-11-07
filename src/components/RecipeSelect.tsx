@@ -1,13 +1,12 @@
 import React from 'react';
 import { View }  from 'react-native';
-import { Recipe } from './components/Recipe';
-import RecipeStack from './components/RecipeStack';
-import MenuBar from './components/MenuBar';
+import { Recipe } from './Recipe';
+import RecipeStack from './RecipeStack';
 
-import RECIPE_DATA from './resources/recipes.json';
-import MenuContainer from './containers/MenuContainer';
+import RECIPE_DATA from '../resources/recipes.json';
+import MenuContainer from '../containers/MenuContainer';
 
-export default class HomeActivity extends React.Component<{}, {}> {
+export default class RecipeSelect extends React.Component<{}, {}> {
   render() {
     return (
       <View style={{flex: 1, alignItems: 'stretch'}}>
