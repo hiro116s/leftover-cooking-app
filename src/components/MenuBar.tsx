@@ -5,7 +5,7 @@ import { MenuType } from '../actions';
 
 interface MenuBarProps {
   menuType: MenuType,
-  toggleMenu: (this: MenuBarProps, menuType: MenuType) => any
+  switchMenu: (this: MenuBarProps, menuType: MenuType) => any
 }
 
 const styles: any = StyleSheet.create({
@@ -27,13 +27,13 @@ export default class MenuBar extends React.Component<MenuBarProps, {}> {
   render() {
     return (
       <View style={styles.menuBarWhole}>
-        <TouchableHighlight style={{flex: 1}} onPress={() => this.props.toggleMenu(MenuType.MAIN)}>
+        <TouchableHighlight style={{flex: 1}} onPress={() => this.props.switchMenu(MenuType.MAIN)}>
           <Image style={styles.menuBarImage} source={ this.props.menuType === MenuType.MAIN ? FOOD_BLUE_IMAGE : FOOD_IMAGE } resizeMode="contain"/>
         </TouchableHighlight>
-        <TouchableHighlight style={{flex: 1}} onPress={() => this.props.toggleMenu(MenuType.REFRIGERATOR)}>
+        <TouchableHighlight style={{flex: 1}} onPress={() => this.props.switchMenu(MenuType.REFRIGERATOR)}>
           <Image style={styles.menuBarImage} source={ this.props.menuType === MenuType.REFRIGERATOR ? REFRIGERATOR_BLUE_IMAGE : REFRIGERATOR_IMAGE } resizeMode="contain"/>
         </TouchableHighlight>
-        <TouchableHighlight style={{flex: 1}} onPress={() => this.props.toggleMenu(MenuType.HISTORY)}>
+        <TouchableHighlight style={{flex: 1}} onPress={() => this.props.switchMenu(MenuType.HISTORY)}>
           <Image style={styles.menuBarImage} source={ this.props.menuType === MenuType.HISTORY ? NOTE_BLUE_IMAGE : NOTE_IMAGE } resizeMode="contain"/>
         </TouchableHighlight>
       </View>

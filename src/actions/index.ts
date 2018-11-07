@@ -1,4 +1,4 @@
-export const toggleMenu: (menuType: MenuType) => any = (menuType: MenuType) => ({
+export const switchMenu: (menuType: MenuType) => any = (menuType: MenuType) => ({
     type: 'TOGGLE_MENU',
     menuType
 });
