@@ -15,11 +15,11 @@ const styles: any = StyleSheet.create({
     width: undefined
   },
   menuBarWhole: {
-    flex: 1, 
     flexDirection: 'row',
     marginTop: 5,
     borderTopWidth: 1,
-    borderTopColor: 'darkgrey'
+    borderTopColor: 'darkgrey',
+    height: 64
   }
 });
 

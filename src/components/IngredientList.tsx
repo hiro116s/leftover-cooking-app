@@ -7,6 +7,7 @@ export default class IngredientList extends React.Component<{}, {}> {
   render() {
     return (
       <View style={{flex: 1, alignItems: 'stretch'}}>
+        <View style = {{flex: 1}}></View>
         <MenuContainer />
       </View>
     );

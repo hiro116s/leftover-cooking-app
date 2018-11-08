@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import RecipeSelect from './components/RecipeSelect';
 import { MenuType } from './actions/SwitchMenuAction';
 import { MenuState } from './reducers/MenuReducer';
 import { View } from 'react-native';
 import HistoryList from './components/HistoryList';
 import IngredientList from './components/IngredientList';
+import RecipeSelect from './components/RecipeSelect';
 
 interface HomeProps {
   menuType: MenuType
