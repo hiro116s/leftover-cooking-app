@@ -6,7 +6,7 @@ export interface MenuState {
     menuType : MenuType
 }
 
-export default function menuReducer(state: MenuState = {menuType: MenuType.MAIN}, action: Action<ActionType>) {
+export default function menu(state: MenuState = {menuType: MenuType.MAIN}, action: Action<ActionType>) {
     if (isSwitchMenuAction(action)) {
         return { menuType: action.menuType };
     } else {

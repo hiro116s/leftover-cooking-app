@@ -3,9 +3,9 @@ import { Provider } from 'react-redux';
 import Home from './src/Home';
 
 import { createStore } from 'redux';
-import menuReducer from './src/reducers/MenuReducer';
+import combineReducer from './src/reducers/ReducerCombiner';
 
-const store = createStore(menuReducer);
+const store = createStore(combineReducer);
 export default class App extends React.Component<{}, {}> {
   render() {
     return (
