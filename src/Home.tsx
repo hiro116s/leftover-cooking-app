@@ -6,6 +6,7 @@ import HistoryList from './components/HistoryList';
 import IngredientList from './components/IngredientList';
 import RecipeSelect from './components/RecipeSelect';
 import { AllState } from './reducers/State';
+import IngredientsContainer from './containers/IngredientsContainer';
 
 interface HomeProps {
   menuType: MenuType
@@ -21,7 +22,7 @@ class Home extends React.Component<HomeProps, {}> {
       <View style={{flex: 1}}>
         {
           this.props.menuType == MenuType.MAIN ? <RecipeSelect /> :
-          this.props.menuType == MenuType.REFRIGERATOR ? <IngredientList /> : <HistoryList />
+          this.props.menuType == MenuType.REFRIGERATOR ? <IngredientsContainer /> : <HistoryList />
         }
       </View>
     );

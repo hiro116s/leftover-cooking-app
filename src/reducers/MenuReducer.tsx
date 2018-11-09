@@ -1,12 +1,9 @@
-import { MenuType, SwitchMenuAction } from '../actions/SwitchMenuAction';
-import {ActionType, isSwitchMenuAction } from '../actions/ActionType';
+import { MenuType } from '../actions/SwitchMenuAction';
+import { ActionType, isSwitchMenuAction } from '../actions/ActionType';
 import { Action } from 'redux';
+import { MenuState } from './State';
 
-export interface MenuState {
-    menuType : MenuType
-}
-
-export default function menu(state: MenuState = {menuType: MenuType.MAIN}, action: Action<ActionType>) {
+export function menu(state: MenuState = {menuType: MenuType.REFRIGERATOR}, action: Action<ActionType>) {
     if (isSwitchMenuAction(action)) {
         return { menuType: action.menuType };
     } else {
