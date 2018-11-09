@@ -1,10 +1,9 @@
 import React from 'react';
-import { View }  from 'react-native';
+import { View } from 'react-native';
+import RECIPE_DATA from '../resources/recipes.json';
 import { Recipe } from './Recipe';
 import RecipeStack from './RecipeStack';
 
-import RECIPE_DATA from '../resources/recipes.json';
-import MenuContainer from '../containers/MenuContainer';
 
 export default class RecipeSelect extends React.Component<{}, {}> {
   render() {
@@ -21,7 +20,6 @@ export default class RecipeSelect extends React.Component<{}, {}> {
         <View>
           <RecipeStack recipes={[RECIPE_DATA[5], RECIPE_DATA[4], RECIPE_DATA[6]]} />
         </View>
-        <MenuContainer />
       </View>
     );
   }

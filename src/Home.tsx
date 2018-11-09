@@ -1,12 +1,12 @@
 import React from 'react';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { MenuType } from './actions/SwitchMenuAction';
-import { View } from 'react-native';
 import HistoryList from './components/HistoryList';
-import IngredientList from './components/IngredientList';
 import RecipeSelect from './components/RecipeSelect';
-import { AllState } from './reducers/State';
 import IngredientsContainer from './containers/IngredientsContainer';
+import MenuContainer from './containers/MenuContainer';
+import { AllState } from './reducers/State';
 
 interface HomeProps {
   menuType: MenuType
@@ -24,6 +24,7 @@ class Home extends React.Component<HomeProps, {}> {
           this.props.menuType == MenuType.MAIN ? <RecipeSelect /> :
           this.props.menuType == MenuType.REFRIGERATOR ? <IngredientsContainer /> : <HistoryList />
         }
+        <MenuContainer />
       </View>
     );
   }

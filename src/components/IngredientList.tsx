@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
-import MenuContainer from '../containers/MenuContainer';
+import { ScrollView, View } from 'react-native';
 import IngredientModel from '../model/IngredientModel';
 import IngredientElement from './IngredientElement';
 
@@ -19,7 +18,6 @@ export default class IngredientList extends React.Component<IngredientListProps,
             )
           })}
         </ScrollView>
-        <MenuContainer />
       </View>
     );
   }
