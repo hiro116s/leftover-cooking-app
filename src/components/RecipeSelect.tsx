@@ -3,22 +3,28 @@ import { View } from 'react-native';
 import { RECIPES_BY_ID } from '../resources';
 import { Recipe } from './Recipe';
 import RecipeStack from './RecipeStack';
+import { RecipeSelectAction } from '../actions/RecipeSelectAction';
 
+interface SelectRecipeProps {
+    selectedRecipeIds: [number, number, number, number]
+    stackedRecipeIds: Array<number>
+    selectRecipe: (recipeId: number) => RecipeSelectAction
+}
 
-export default class RecipeSelect extends React.Component<{}, {}> {
+export default class RecipeSelect extends React.Component<SelectRecipeProps, {}> {
   render() {
     return (
       <View style={{flex: 1, alignItems: 'stretch'}}>
         <View style={{flex: 5, flexDirection: 'row'}}>
-          <Recipe recipe={RECIPES_BY_ID[91]} />
-          <Recipe recipe={RECIPES_BY_ID[43]} />
+          <Recipe recipe={RECIPES_BY_ID[this.props.selectedRecipeIds[0]]} selectRecipe={this.props.selectRecipe} />
+          <Recipe recipe={RECIPES_BY_ID[this.props.selectedRecipeIds[1]]} selectRecipe={this.props.selectRecipe} />
         </View>
         <View style={{flex: 5, flexDirection: 'row'}}>
-          <Recipe recipe={RECIPES_BY_ID[45]} />
-          <Recipe recipe={RECIPES_BY_ID[21]} />
+          <Recipe recipe={RECIPES_BY_ID[this.props.selectedRecipeIds[2]]} selectRecipe={this.props.selectRecipe} />
+          <Recipe recipe={RECIPES_BY_ID[this.props.selectedRecipeIds[3]]} selectRecipe={this.props.selectRecipe} />
         </View>
         <View>
-          <RecipeStack recipes={[RECIPES_BY_ID[5], RECIPES_BY_ID[4], RECIPES_BY_ID[6]]} />
+          <RecipeStack recipes={this.props.stackedRecipeIds} />
         </View>
       </View>
     );

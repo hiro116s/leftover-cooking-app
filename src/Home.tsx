@@ -3,9 +3,9 @@ import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { MenuType } from './actions/SwitchMenuAction';
 import HistoryList from './components/HistoryList';
-import RecipeSelect from './components/RecipeSelect';
 import IngredientsContainer from './containers/IngredientsContainer';
 import MenuContainer from './containers/MenuContainer';
+import RecipeSelectContainer from './containers/RecipeSelectContainer';
 import { AllState } from './reducers/State';
 
 interface HomeProps {
@@ -21,7 +21,7 @@ class Home extends React.Component<HomeProps, {}> {
     return (
       <View style={{flex: 1}}>
         {
-          this.props.menuType == MenuType.MAIN ? <RecipeSelect /> :
+          this.props.menuType == MenuType.MAIN ? <RecipeSelectContainer /> :
           this.props.menuType == MenuType.REFRIGERATOR ? <IngredientsContainer /> : <HistoryList />
         }
         <MenuContainer />

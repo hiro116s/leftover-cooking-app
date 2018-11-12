@@ -9,7 +9,17 @@ export interface IngredientState {
     ingredients: Array<IngredientModel>
 }
 
+export interface SelectedRecipeState {
+    recipeIds: [number, number, number, number]
+}
+
+export interface StackedRecipeState {
+    recipeIds: Array<number>
+}
+
 export interface AllState {
     menu: MenuState,
-    ingredients: IngredientState
+    ingredients: IngredientState,
+    selectedRecipe: SelectedRecipeState,
+    stackedRecipe: StackedRecipeState
 }
