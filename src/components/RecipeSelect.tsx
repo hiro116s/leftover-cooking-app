@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import RECIPE_DATA from '../resources/recipes.json';
+import { RECIPES_BY_ID } from '../resources';
 import { Recipe } from './Recipe';
 import RecipeStack from './RecipeStack';
 
@@ -10,15 +10,15 @@ export default class RecipeSelect extends React.Component<{}, {}> {
     return (
       <View style={{flex: 1, alignItems: 'stretch'}}>
         <View style={{flex: 5, flexDirection: 'row'}}>
-          <Recipe recipe={RECIPE_DATA[0]} />
-          <Recipe recipe={RECIPE_DATA[1]} />
+          <Recipe recipe={RECIPES_BY_ID[91]} />
+          <Recipe recipe={RECIPES_BY_ID[43]} />
         </View>
         <View style={{flex: 5, flexDirection: 'row'}}>
-          <Recipe recipe={RECIPE_DATA[2]} />
-          <Recipe recipe={RECIPE_DATA[3]} />
+          <Recipe recipe={RECIPES_BY_ID[45]} />
+          <Recipe recipe={RECIPES_BY_ID[21]} />
         </View>
         <View>
-          <RecipeStack recipes={[RECIPE_DATA[5], RECIPE_DATA[4], RECIPE_DATA[6]]} />
+          <RecipeStack recipes={[RECIPES_BY_ID[5], RECIPES_BY_ID[4], RECIPES_BY_ID[6]]} />
         </View>
       </View>
     );
