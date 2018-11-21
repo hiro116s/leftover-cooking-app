@@ -24,21 +24,21 @@ const styles: any = StyleSheet.create({
 });
 
 export default class RecipeStack extends React.Component<RecipeStackProps, {}> {
-  render() {
-    return (
-        <View style={{height: 64, flexDirection: 'row'}}>
-            <ScrollView style={{flex:1}} horizontal={true}>
-                {this.props.recipeIds.map((internalId, key) => {
-                    return (
-                        <Image style={styles.recipeImage} key={key} source={{ uri: RECIPES_BY_ID[internalId].imageUrlBySizeType.T280x210, width: 64, height: 64 }} />
-                    )
-                })}
-                <Image source={{height: 64}}/>
-            </ScrollView>
-            <TouchableOpacity style={styles.registerButton} onPress={() => this.props.addHistory(this.props.recipeIds)}>
-                <Text style={{fontSize:20}}>登録</Text>
-            </TouchableOpacity>
-        </View>
-    );
-  }
+    render() {
+        return (
+            <View style={{height: 64, flexDirection: 'row'}}>
+                <ScrollView style={{flex:1}} horizontal={true}>
+                    {this.props.recipeIds.map((internalId, key) => {
+                        return (
+                            <Image style={styles.recipeImage} key={key} source={{ uri: RECIPES_BY_ID[internalId].imageUrlBySizeType.T280x210, width: 64, height: 64 }} />
+                        )
+                    })}
+                    <Image source={{height: 64}}/>
+                </ScrollView>
+                <TouchableOpacity style={styles.registerButton} onPress={() => this.props.addHistory(this.props.recipeIds)}>
+                    <Text style={{fontSize:20}}>登録</Text>
+                </TouchableOpacity>
+            </View>
+        );
+    }
 }

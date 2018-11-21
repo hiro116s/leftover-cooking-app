@@ -9,25 +9,25 @@ import RecipeSelectContainer from './containers/RecipeSelectContainer';
 import { AllState } from './reducers/State';
 
 interface HomeProps {
-  menuType: MenuType
+    menuType: MenuType
 }
 
 const mapStateToProps = (state: AllState) => ({
-  menuType: state.menu.menuType
+    menuType: state.menu.menuType
 })
 
 class Home extends React.Component<HomeProps, {}> {
-  render() {
-    return (
-      <View style={{flex: 1}}>
-        {
-          this.props.menuType == MenuType.MAIN ? <RecipeSelectContainer /> :
-          this.props.menuType == MenuType.REFRIGERATOR ? <IngredientsContainer /> : <HistoryList />
-        }
-        <MenuContainer />
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View style={{flex: 1}}>
+                {
+                    this.props.menuType == MenuType.MAIN ? <RecipeSelectContainer /> :
+                    this.props.menuType == MenuType.REFRIGERATOR ? <IngredientsContainer /> : <HistoryList />
+                }
+                <MenuContainer />
+            </View>
+        );
+    }
 }
 
 export default connect(

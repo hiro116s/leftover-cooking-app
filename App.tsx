@@ -7,11 +7,11 @@ import combineReducer from './src/reducers/ReducerCombiner';
 
 const store = createStore(combineReducer);
 export default class App extends React.Component<{}, {}> {
-  render() {
-    return (
-      <Provider store={store}>
-        <Home />
-      </Provider> 
-    );
-  }
+  	render() {
+    	return (
+      		<Provider store={store}>
+        		<Home />
+      		</Provider>
+    	);
+  	}
 }
