@@ -4,8 +4,7 @@ import RecipeSelect from '../components/RecipeSelect';
 import { AllState } from '../reducers/State';
 
 const mapStateToProps = (state: AllState) => ({
-    selectedRecipeIds: state.selectedRecipe.recipeIds,
-    stackedRecipeIds: state.stackedRecipe.recipeIds
+    selectedRecipeIds: state.selectedRecipe.recipeIds
 })
 
 const mapDispatchToProps = (dispatch: any) => ({

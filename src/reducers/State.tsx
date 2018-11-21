@@ -1,5 +1,6 @@
 import { MenuType } from '../actions/SwitchMenuAction';
 import IngredientModel from '../model/IngredientModel';
+import RecipeHistoryModel from '../model/RecipeHistoryModel';
 
 export interface MenuState {
     menuType : MenuType
@@ -17,9 +18,14 @@ export interface StackedRecipeState {
     recipeIds: Array<number>
 }
 
+export interface RecipeHistoryState {
+    histories: Array<RecipeHistoryModel>
+}
+
 export interface AllState {
     menu: MenuState,
     ingredients: IngredientState,
     selectedRecipe: SelectedRecipeState,
-    stackedRecipe: StackedRecipeState
+    stackedRecipe: StackedRecipeState,
+    recipeHisotry: RecipeHistoryState
 }
