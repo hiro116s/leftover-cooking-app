@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import RecipeStack from '../components/RecipeStack';
 import { addHisotry } from '../actions/AddHistoryAction';
+import SelectedRecipesComponent from '../components/SelectedRecipesComponent';
 import { AllState } from '../reducers/State';
 
 const mapStateToProps = (state: AllState) => ({
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch: any) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(RecipeStack)
+)(SelectedRecipesComponent)

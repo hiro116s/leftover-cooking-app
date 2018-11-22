@@ -1,11 +1,26 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ScrollView, Text} from 'react-native';
+import RecipeHistoryModel from '../model/RecipeHistoryModel';
+import RecipeStack from './RecipeStack';
 
-export default class HistoryList extends React.Component<{}, {}> {
+interface HistoryListProps {
+    recipeHistories: Array<RecipeHistoryModel>
+}
+
+export default class HistoryList extends React.Component<HistoryListProps, {}> {
     render() {
         return (
             <View style={{flex: 1, alignItems: 'stretch' }}>
-                <View style = {{flex: 1}}></View>
+                <ScrollView style={{flex: 1}}>
+                    {this.props.recipeHistories.map((prop, key) => {
+                        return (
+                            <View key={key}>
+                                <RecipeStack  recipeIds={prop.recipeIds} />
+                                <Text>{prop.createdAt.toLocaleString()}</Text>
+                            </View>
+                        )
+                    })}
+                </ScrollView>
             </View>
         );
     }

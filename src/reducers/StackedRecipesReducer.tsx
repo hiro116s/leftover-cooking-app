@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { ActionType, isRecipeSelectAction } from '../actions/ActionType';
+import { ActionType, isRecipeSelectAction, isAddHistoryAction } from '../actions/ActionType';
 import { StackedRecipeState } from './State';
 
 const INITIAL_STATE : StackedRecipeState = {
@@ -14,6 +14,8 @@ export function stackedRecipe(state: StackedRecipeState = INITIAL_STATE, action:
         } else {
             return {recipeIds: [...state.recipeIds, action.recipeId]};
         }
+    } else if (isAddHistoryAction(action)) {
+        return {recipeIds: []}
     } else {
         return state;
     }

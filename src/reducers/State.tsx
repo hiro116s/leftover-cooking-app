@@ -27,5 +27,5 @@ export interface AllState {
     ingredients: IngredientState,
     selectedRecipe: SelectedRecipeState,
     stackedRecipe: StackedRecipeState,
-    recipeHisotry: RecipeHistoryState
+    recipeHistory: RecipeHistoryState,
 }

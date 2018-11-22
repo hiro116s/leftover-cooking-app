@@ -1,10 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
+import { RecipeSelectAction } from '../actions/RecipeSelectAction';
+import SelectedRecipesContainer from '../containers/SelectedRecipesContainer';
 import { RECIPES_BY_ID } from '../resources';
 import { Recipe } from './Recipe';
-import RecipeStack from './RecipeStack';
-import { RecipeSelectAction } from '../actions/RecipeSelectAction';
-import RecipeStackContainer from '../containers/RecipeStackContainer';
 
 interface SelectRecipeProps {
     selectedRecipeIds: [number, number, number, number]
@@ -24,7 +23,7 @@ export default class RecipeSelect extends React.Component<SelectRecipeProps, {}>
           			<Recipe recipe={RECIPES_BY_ID[this.props.selectedRecipeIds[3]]} selectRecipe={this.props.selectRecipe} />
         		</View>
         		<View>
-          			<RecipeStackContainer />
+          			<SelectedRecipesContainer />
         		</View>
       		</View>
     	);

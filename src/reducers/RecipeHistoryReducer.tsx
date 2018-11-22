@@ -6,7 +6,7 @@ import RecipeHistoryModel from '../model/RecipeHistoryModel';
 import { RecipeHistoryState } from './State';
 
 const INITIAL_STATE : RecipeHistoryState = {
-    histories: [new RecipeHistoryModel(-1, new Date(), [])]
+    histories: []
 };
 
 export function recipeHistory(state: RecipeHistoryState = INITIAL_STATE, action: Action<ActionType>): RecipeHistoryState {
